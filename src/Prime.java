@@ -1,10 +1,9 @@
 public class Prime {
 
-    public class PrimeNum {
         public static String isPrime(int num){
             String s="";
             int count=0;
-            for (int i = 2; i <num/2 ; i++) {
+            for (int i = 2; i <=num ; i++) {
                 if(num%i==0){
                     count++;
                 }
@@ -22,4 +21,4 @@ public class Prime {
         }
     }
 
-}
+
