@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class FrequencyOfCharsWhileLoop {
 
     /*
@@ -5,11 +7,13 @@ public class FrequencyOfCharsWhileLoop {
      */
 
     public static void main(String[] args) {
-        String s = "AAABBCDD";
+        Scanner input = new Scanner(System.in);
+        String s = input.nextLine();
         String d = FrequencyOfChars(s);
         System.out.println(d);
         System.out.println(FrequencyOfChars(s));
     }
+
 
     public static String FrequencyOfChars(String s){
 
