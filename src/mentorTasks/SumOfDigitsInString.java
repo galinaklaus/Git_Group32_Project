@@ -16,7 +16,7 @@ public class SumOfDigitsInString {
         int sum = 0;
         for (int i = 0; i < s.length(); i++) {
             if (Character.isDigit(s.charAt(i))) {
-                digits += s.charAt(i);
+                digits+= s.charAt(i);
             }
         }
         for (int i = 0; i < digits.length(); i++) {
