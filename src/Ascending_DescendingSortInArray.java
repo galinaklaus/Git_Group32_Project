@@ -11,7 +11,7 @@ Ex:
 
  */
 
-    public class SortAscendingInArray {
+
         public static void main(String[] args) {
             int[] nums = {2, 4, 7, 1, 6, 9};
             System.out.println(Arrays.toString(sortAscending(nums)));
@@ -48,4 +48,4 @@ Ex:
             return nums;
         }
     }
-}
+
