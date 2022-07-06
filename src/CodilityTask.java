@@ -52,8 +52,10 @@ public class CodilityTask {
         }else{
             System.out.println("Invalid number");
         }
-        
-        
+
+        for (int i = 0; i < 10; i++) {
+            System.out.println("i = " + i);
+        }
         
         
     }
