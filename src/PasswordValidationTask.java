@@ -30,7 +30,7 @@ public class PasswordValidationTask {
         boolean hasSpecial =false;
 
 
-        if(s.length()>=6 && !s.isEmpty()){
+        if(s.length()>=6 && !s.contains(" ")){
 
         for (int i = 0; i < s.length(); i++) {
 

@@ -30,14 +30,17 @@ public class StringAlphanumeric {
             if (Character.isDigit(s.charAt(i))) {
                 result += s.charAt(i);
             }
-            if(Character.isDigit(s.charAt(i))&&Character.isAlphabetic(s.charAt(i+1))){
+          if(Character.isDigit(s.charAt(i))&&Character.isAlphabetic(s.charAt(i+1))){
                 result+=" ";
             }
             if(Character.isLetter(s.charAt(i))&&Character.isDigit(s.charAt(i+1))){
                 result+=" ";
             }
+
         }
         result+=s.charAt(s.length()-1);
+
+
 
         String[] arr = result.split(" ");
 
