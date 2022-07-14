@@ -11,27 +11,40 @@ public class MapSortByValues {
         map.put("1", "alpha");
         map.put("2", "delta");
 
-        System.out.println("map = " + map);
+        System.out.println("Original map = " + map);
+        System.out.println("------------------------------------------------------");
 
-        sortMapValues(map);
+        sortMapValuesWithList(map);
 
+        System.out.println("------------------------------------------------------");
         System.out.println("sorting_map_to_treeMap(map) = " + sorting_map_to_treeMap(map));
 
+        Map<String, Integer> unsortedMap = new HashMap<>();
+        unsortedMap.put("alex", 1);
+        unsortedMap.put("david", 2);
+        unsortedMap.put("elle", 3);
+        unsortedMap.put("charles", 4);
+        unsortedMap.put("brian", 5);
+        System.out.println("------------------------------------------------------");
+        sortByValueWithStream(unsortedMap);
     }
 
 
 
 
 
-    public static void sortMapValues(Map<String,String>map){
+    public static void sortMapValuesWithList(Map<String,String>map){
 
 
-        List<String> list = new ArrayList(map.keySet());
+        List<String> list = new ArrayList();
+
+        for(String eachValue:map.values()){
+            list.add(eachValue);
+        }
         Collections.sort(list);
 
-        for (String s:list){
-            System.out.println(map.get(s));
-        }
+
+        System.out.println("Sorted map values as a list "+list);
 
     }
 
@@ -45,7 +58,25 @@ public class MapSortByValues {
        }
        return treemap;
     }
+
+
+
+    public static void sortByValueWithStream(Map<String,Integer>unSortedMap){
+
+
+        System.out.println("Unsorted Map : " + unSortedMap);
+
+        LinkedHashMap<String, Integer> sortedMap = new LinkedHashMap<>();//to preserve entry order
+
+        //comparingByValue() method to help in sorting by values. This method returns a Comparator that compares Map.Entry in natural order on values.
+        unSortedMap.entrySet().stream().sorted(Map.Entry.comparingByValue())
+                .forEachOrdered(x -> sortedMap.put(x.getKey(), x.getValue()));
+
+        System.out.println("Sorted Map using Stream  : " + sortedMap);
+
     }
+
+}
 
 
 
